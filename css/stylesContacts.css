@@ -1,0 +1,44 @@
+/* General Card Styling */
+.card {
+    background-color: #1c2630; /* Dark background for better contrast */
+    border: 2px dashed #495057;
+    color: #ffffff; /* White text for better readability */
+}
+
+/* Card Images */
+.card-img-uniform {
+    object-fit:contain;
+    height: 200px;
+    width: 100%;
+}
+
+/* Form Controls */
+.form-control {
+    background-color: #495057;
+    border: 1px solid #6c757d;
+    color: #ffffff;
+}
+
+.custom-card-title {
+    font-size: 1.25rem;
+    color: #70b5ff;
+}
+
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+}
+
+#SearchMoodleName{
+    background-color: #ffffff;
+}
+
+#SearchNameCIS{
+    background-color: #ffffff;
+}
+
+#contactLabels{
+    position: relative;
+    left:10%;
+}

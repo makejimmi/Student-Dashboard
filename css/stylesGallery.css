@@ -1,0 +1,48 @@
+#gallery {
+    width: 100%;
+    max-width: 600px;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+}
+
+.gallery-container {
+    height: 80%; 
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Ensure images don't overflow */
+}
+
+.gallery-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Preserve aspect ratio */
+    display: block; /* Ensure image behaves as block element */
+}
+
+#groupOfButtonsMia {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px; /* Adjust spacing */
+}
+
+#prevBtn,
+#nextBtn,
+#goBtn,
+#imageIndex {
+    margin: 0 5px; /* Adjust spacing between buttons */
+    padding: 5px 10px; /* Adjust padding to control button size */
+    font-size: 14px; /* Adjust font size of the buttons */
+    height: auto;
+}
+
+/* Responsive Gallery */
+@media (max-width: 768px) {
+    .gallery-container img {
+        height: auto; /* Maintain aspect ratio */
+        width: 100%;
+    }
+}

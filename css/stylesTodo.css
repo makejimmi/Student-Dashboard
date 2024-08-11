@@ -1,0 +1,82 @@
+/* Todo List Styling */
+#todo-list {
+    background-color: #1c2630;
+    color: #ffffff;
+    padding: 1.5rem;
+}
+
+/* Todo Input */
+.input-group .form-control {
+    background-color: #fdfdfd;
+    border: 2px solid #6c757d;
+}
+
+/* Todo Items */
+#todo-items {
+    list-style-type: decimal;
+}
+
+#todo-items li {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    position: relative;
+    border: none;
+    box-shadow: none;
+    display: flex;
+    align-items: center;
+}
+
+.todo-item {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space between items */
+    align-items: center; /* Center items vertically */
+}
+
+/* Checkbox */
+.todo-checkbox {
+    margin-right: 10px;
+    height: 20px; /* Increase checkbox height */
+    width: 20px; /* Increase checkbox width */
+    cursor: pointer;
+}
+
+.todo-checkbox:hover {
+    background-color: #6c757d; /* Change background color on hover */
+}
+
+/* Remove Button */
+.remove-item {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem; /* Adjust font size */
+    cursor: pointer;
+    margin-left: auto; /* Push the button to the right */
+    padding: 0;
+}
+
+.remove-item:hover {
+    color: #142435;
+    background-color: hsl(216, 62%, 66%);
+}
+
+.remove-item:focus {
+    background-color: hsl(210, 32%, 40%);
+    color: #fff;
+    outline: auto;
+}
+
+@media (max-width: 768px) {
+    #todo-list {
+        /* Adjust todo list styles for smaller screens */
+        width: 80%;
+        max-width: 400px;
+    }
+    #toggle-btn {
+        top: -20px; /* Adjust position for smaller screens */
+        left: 50%; /* Center the button */
+        transform: translateX(-50%);
+    }
+}

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="css/stylesCalc.css">
+    <link rel="stylesheet" href="css/stylesContacts.css">
+    <link rel="stylesheet" href="css/stylesGallery.css">
+    <link rel="stylesheet" href="css/stylesCalendar.css">
+    <link rel="stylesheet" href="css/stylesTodo.css">
+    <link rel="stylesheet" href="css/stylesIndex.css">
+    <title>Frontend UniHub</title>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar navbar-expand-md bg-dark navbar-dark py-3 fixed-top">
+            <div class="container-fluid">
+                <a href="#" class="navbar-brand">Uni Hub</a>
+
+                <!-- Weather Condition -->
+                <div id="weather" class="me-auto d-flex align-items-center">
+                    <a href="https://www.google.com/search?q=weather" target="_blank" id="weather-link">
+                        <span id="weather-data" class="text-white">Loading...</span>
+                    </a>
+                </div>
+
+                <!-- Analog Clock -->
+                 <div id="analog-clock" class="text-white mx-3">
+                    <div id="hour" class="clock-item"></div>
+                    <div id="minute" class="clock-item"></div>
+                    <div id="second" class="clock-item"></div>
+                </div>
+
+                <!-- Digital Clock and Date -->
+                <div id="date-time" class="text-white">
+                    <span id="digital-clock"></span>
+                    <span id="date"></span>
+                </div>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="visually-hidden">Toggle navigationbar</span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navmenu">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a href="#contacts" class="nav-link">Contacts</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#calculatorWidget" class="nav-link">Calculator</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#calendar-widget" class="nav-link">Calendar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#gallery" class="nav-link">Gallery</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#todo-list" class="nav-link">Todo List</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <h1 class="visually-hidden">Frontend UniHub</h1>
+        <div id="wholeDisplay" class="container-fluid text-center">
+            <!-- Contacts -->
+            <section id="contacts" class="widget col-lg-6 col-md-8 col-12 mx-auto" lang="en">
+                <h2 class="visually-hidden">Contacts</h2>
+                <button type="button" class="btn-close" aria-label="Close"></button>
+                <div class="d-flex justify-content-around align-items-stretch mt-5 p-3 flex-wrap">
+                    <div class="card text-white mb-3 col-md-5 col-12">
+                        <img src="https://www.e-learning.tu-darmstadt.de/media/elc/__relaunch/kontakt_icons/Website-Icons_moodle-500_415x415.png"
+                            class="card-img-top card-img-uniform"
+                            alt="Image depicting the logo of Moodle, an educational platform.">
+                        <div class="card-body">
+                            <div aria-label="Contact search in Moodle" class="card-title custom-card-title">
+                                Contact search in Moodle
+                            </div>
+                            <br><br>
+                            <p class="card-text">Search in Moodle for students and teachers, you might need to log in
+                                first
+                            </p>
+                            <form onsubmit="searchMoodle(event)">
+                                <div class="mb-3">
+                                    <label class="contactLabels visually-hidden" for="SearchMoodleName">Search in Moodle for a name</label>
+                                    <input type="text" id="SearchMoodleName" name="SearchMoodleName"
+                                        aria-label="Searching name in Moodle" class="form-control"
+                                        placeholder="Search Moodle" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-custom-sm">Go</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="card text-white mb-3 col-md-5 col-12">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgzhjMM5dIXkVIbBg2wgQqkduAVWWtcVswwjPP_f7zbw&s"
+                            class="card-img-top card-img-uniform" alt="CIS Logo">
+                        <div class="card-body">
+                            <div aria-label="Contact search in CIS" class="card-title custom-card-title">Contact search in CIS</div>
+                            <br><br>
+                            <p class="card-text">Search in CIS for students and teachers</p>
+                            <form onsubmit="CISsearch(event)">
+                                <div class="mb-3">
+                                    <label class="contactLabels visually-hidden" for="SearchNameCIS">Search in CIS for a name</label>
+                                    <input type="text" id="SearchNameCIS" name="SearchNameCIS"
+                                        aria-label="Searching name in CIS" class="form-control" placeholder="Search CIS"
+                                        required>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-custom-sm">Go</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Custom Widget Calculator -->
+            <section id="calculatorWidget" class="widget col-lg-6 col-md-8 col-12 mx-auto" lang="en">
+                <h2 class="visually-hidden">Calculator</h2>
+                <button type="button" class="btn-close" aria-label="Close"></button>
+                <div class="calculator card">
+                    <div class="card-body">
+                        <label for="displayinput" class="visually-hidden">Calculator Display</label>
+                        <input id="displayinput" readonly>
+                        <div class="button-row">
+                            <button type="button" class="btn btn-primary operator" onclick="clearDisplay()">C</button>
+                        </div>
+                        <div class="button-row">
+                            <button type="button" class="btn btn-primary number" onclick="append(7)">7</button>
+                            <button type="button" class="btn btn-primary number" onclick="append(8)">8</button>
+                            <button type="button" class="btn btn-primary number" onclick="append(9)">9</button>
+                            <button type="button" class="btn btn-primary operator" onclick="append('+')">+</button>
+                        </div>
+                        <div class="button-row">
+                            <button type="button" class="btn btn-primary number" onclick="append(4)">4</button>
+                            <button type="button" class="btn btn-primary number" onclick="append(5)">5</button>
+                            <button type="button" class="btn btn-primary number" onclick="append(6)">6</button>
+                            <button type="button" class="btn btn-primary operator" onclick="append('-')">-</button>
+                        </div>
+                        <div class="button-row">
+                            <button type="button" class="btn btn-primary number" onclick="append(1)">1</button>
+                            <button type="button" class="btn btn-primary number" onclick="append(2)">2</button>
+                            <button type="button" class="btn btn-primary number" onclick="append(3)">3</button>
+                            <button type="button" class="btn btn-primary operator" onclick="append('*')">x</button>
+                        </div>
+                        <div class="button-row">
+                            <button type="button" class="btn btn-primary operator" onclick="calculate()">=</button>
+                            <button type="button" class="btn btn-primary number" onclick="append(0)">0</button>
+                            <button type="button" class="btn btn-primary number" onclick="append('.')">.</button>
+                            <button type="button" class="btn btn-primary operator" onclick="append('/')">/</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Calendar -->
+            <section id="calendar-widget" class="widget col-lg-6 col-md-8 col-12 mx-auto" lang="en">
+                <h2 class="visually-hidden">Calendar</h2>
+                <button type="button" class="btn-close" aria-label="Close"></button>
+                <button id="Open" type="button" aria-label="Open Calendar Widget" aria-controls="calendarFrame"
+                    class="btn btn-primary">Open</button> <br>
+
+                <label for="fileInput" class="visually-hidden">Load Calendar File</label>
+                <input type="file" id="fileInput" accept=".html" style="display: none;"> <br>
+
+                <div id="calendarControls" class="btn-group" role="group"
+                    aria-label="Buttons for navigation of calendar weeks + save/load data" style="display: none;">
+                    <button type="button" id="prevWeek" class="btn btn-primary" aria-label="Previous Week">Previous
+                        Week</button>
+                    <button type="button" id="nextWeek" class="btn btn-primary" aria-label="Next Week">Next
+                        Week</button>
+                    <button type="button" id="saveData" class="btn btn-primary" aria-label="Save Data">Save
+                        Data</button>
+                    <button type="button" id="loadData" class="btn btn-primary" aria-label="Load Data">Load
+                        Data</button>
+                </div>
+                <div id="calendarFrame" style="display: none;"></div><br>
+
+                <button id="Close" type="button" style="display: none;" aria-label="Close Calendar Widget"
+                    class="btn btn-primary">Close</button>
+            </section>
+
+            <!-- Gallery -->
+            <section id="gallery" class="widget col-lg-6 col-md-8 col-12 mx-auto" lang="en">
+                <h2 class="visually-hidden">Gallery</h2>
+                <button type="button" class="btn-close" aria-label="Close"></button>
+                <div class="gallery-container">
+                    <img id="myImg" src="images/bowling.jpg"
+                        alt="AnnaMaria, Jimmi, Piotr, Afrouz, Hobac, Clarisse, Eric, and Hayat at the bowling"
+                        class="img-fluid">
+                </div>
+                <div id="groupOfButtonsMia" class="btn-group" role="group" aria-label="Group of buttons for navigation of gallery">
+                    <button type="button" id="prevBtn" class="btn btn-primary" onclick="prevImage();">Previous Image</button>
+                    <button type="button" id="nextBtn" class="btn btn-primary" onclick="nextImage();">Next Image</button>
+                    <label for="imageIndex" class="visually-hidden">Image Index</label>
+                    <input type="number" id="imageIndex" min="1" max="4" step="1" placeholder="Enter image index">
+                    <button type="submit" id="goBtn" class="btn btn-primary" onclick="goToImage();">Go</button>
+                </div>
+            </section>
+
+            <!-- Todo List -->
+            <section id="todo-list" class="widget col-lg-6 col-md-8 col-12 mx-auto" lang="en">
+                <button type="button" class="btn-close" aria-label="Close"></button>
+                <h2 class="visually-hidden">Todo List</h2>
+                <div class="input-group mb-3">
+                    <input type="text" id="todo-input" class="form-control" placeholder="Add a new item"
+                        aria-label="Add a new item" aria-describedby="button-addon2">
+                    <button onclick="addItem()" class="btn btn-primary" type="submit" id="button-addon2"
+                        tabindex="0">Add</button>
+                </div>
+                <ol id="todo-items">
+                    <li>
+                        <input type="checkbox" class="todo-checkbox" id="checkbox-{{dynamicID}}"
+                            onchange="toggleDone(this)"><label for="checkbox-{{dynamicID}}">This is an
+                            example!</label>
+                        <button type="button" class="remove-item" onclick="removeItem(this)"
+                            aria-label="Remove item">&times;</button>
+                    </li>
+                </ol>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="p-5 bg-dark text-white text-center position-relative">
+        <div class="container-footer">
+            <!-- Text Enlargement Buttons -->
+            <div class="btn-group-vertical btn-group-sm position-absolute bottom-0 start-0" role="group" aria-label="Vertical button group for changing the font size of the website">
+                <button type="button" onclick="resetTextSize()" class="btn btn-primary" style="font-size: 16px;">F</button>
+                <button type="button" onclick="increaseTextSize()" class="btn btn-primary" style="font-size: 20px;">F</button>
+                <button type="button" onclick="increaseTextSizeMore()" class="btn btn-primary" style="font-size: 24px;">F</button>
+            </div>
+            <p class="lead">Copyright &copy; 2024 Frontend Uni Hub - Afrouz, Anna Maria, Piotr, Jimmi</p>
+            <a href="#" class="position-absolute bottom-0 end-0 p-3">
+                <span class="visually-hidden">Back to Top</span>
+                <i class="bi bi-arrow-up-circle h1"></i>
+            </a>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="js/contacts.js"></script>
+    <script src="js/gallery.js"></script>
+    <script src="js/todo.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/calendar.js"></script>
+    <script src="js/calc.js"></script>
+</body>
+
+</html>
