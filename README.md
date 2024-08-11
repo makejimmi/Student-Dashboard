@@ -19,5 +19,5 @@ This project is a Student Dashboard, developed as a collaborative university pro
 - **PHP:** Server-side scripting to handle data and communicate with the local server.
 - **JSON:** To format and manage data storage and retrieval.
 
-- ![Dashboard Screenshot](dashboard screenshot.png)
+- ![Dashboard Screenshot](dashboard%20screenshot.png)
 
